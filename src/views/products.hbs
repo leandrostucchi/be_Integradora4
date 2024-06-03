@@ -1,0 +1,27 @@
+<h1>products.handlebars</h1>
+{{#if isValid}}
+    <div>
+        <h1>dentro del validar ***{{this.page}}***</h1>
+        {{#each docs}}
+            <div>
+                <p>Titulo: {{this.title}} &nbsp; descripcion: {{this.description}}</p>
+            </div>
+            <br/>
+        {{/each}}
+    </div>
+    <br/>
+    <div>
+        {{#if this.hasPrevPage}}
+            <a href={{this.prevLink}}><< Anterior</a>
+        {{/if}}
+        {{page}}
+        {{#if this.hasNextPage}}
+            <a href={{this.nextLink}}>Siguiente >></a>
+        {{/if}} 
+    </div>
+{{else}}
+    <h1>No hay productos para mostrar</h1>
+{{/if}}
+<script src="/src/public/js/index.js"></script>
+<script src="/src/routes/productsModel.router.js"></script>
+
